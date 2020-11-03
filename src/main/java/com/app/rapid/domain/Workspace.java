@@ -1,6 +1,5 @@
 package com.app.rapid.domain;
 
-import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -9,35 +8,32 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.
  * User: in708bhugad
- * Date: 07-02-2020
- * Time: 15:24
+ * Date: 22-03-2020
+ * Time: 16:48
  * inside the package - com.app.rapid.domain
  * To change this template use File | Settings | File and Code Templates.
  */
-@Entity
-public class Page {
 
+@Entity
+public class Workspace {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer Id;
-    private String pageName;
-    private String pageDesc;
+    private String workspaceName;
+    private String workspaceDesc;
     @CreationTimestamp
     private LocalDateTime createdAt;
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    protected Page() {
+    public Workspace() {
     }
 
-    public Page(String pageName, String pageDesc) {
-        this.pageName = pageName;
-        this.pageDesc = pageDesc;
+    public Workspace(String workspaceName, String workspaceDesc) {
     }
 
     public Integer getId() {
@@ -48,20 +44,20 @@ public class Page {
         Id = id;
     }
 
-    public String getPageName() {
-        return pageName;
+    public String getWorkspaceName() {
+        return workspaceName;
     }
 
-    public void setPageName(String pageName) {
-        this.pageName = pageName;
+    public void setWorkspaceName(String workspaceName) {
+        this.workspaceName = workspaceName;
     }
 
-    public String getPageDesc() {
-        return pageDesc;
+    public String getWorkspaceDesc() {
+        return workspaceDesc;
     }
 
-    public void setPageDesc(String pageDesc) {
-        this.pageDesc = pageDesc;
+    public void setWorkspaceDesc(String workspaceDesc) {
+        this.workspaceDesc = workspaceDesc;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -82,10 +78,12 @@ public class Page {
 
     @Override
     public String toString() {
-        return "Page{" +
+        return "Workspace{" +
                 "Id=" + Id +
-                ", pageName='" + pageName + '\'' +
-                ", pageDesc='" + pageDesc + '\'' +
+                ", workspaceName='" + workspaceName + '\'' +
+                ", workspaceDesc='" + workspaceDesc + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }
